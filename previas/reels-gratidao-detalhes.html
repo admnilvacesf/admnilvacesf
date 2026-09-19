@@ -55,97 +55,95 @@
       padding: 16px 14px 20px;
       background: linear-gradient(180deg, rgba(7,8,12,0.65) 0%, transparent 22%, transparent 55%, rgba(7,8,12,0.85) 100%);
     }
+    .top-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 100%;
+      pointer-events: auto;
+    }
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: #fff;
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       background: rgba(11, 17, 32, 0.85);
       backdrop-filter: blur(10px);
-      padding: 8px 14px;
-      border-radius: 30px;
+      padding: 7px 12px;
+      border-radius: 24px;
       border: 1px solid rgba(248, 192, 139, 0.35);
       box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
     .top-bar .live-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      font-weight: 600;
+      gap: 5px;
+      font-size: 10px;
+      font-weight: 700;
       color: #10b981;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
     .top-bar .live-badge::before {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 7px;
+      height: 7px;
       border-radius: 50%;
       background: #10b981;
       box-shadow: 0 0 8px #10b981;
     }
 
-    /* LETREIRO DE DESTAQUE CENTRAL (ALTO CONTRASTE) */
+    /* LETREIRO DE DESTAQUE NO TOPO (NÃO TAMPANDO O ROSTO) */
     .letreiro-destaque {
-      pointer-events: auto;
-      margin: auto 4px;
       background: rgba(11, 17, 32, 0.94);
-      backdrop-filter: blur(16px);
-      border: 2px solid #F8C08B;
-      border-radius: 16px;
-      padding: 18px 18px;
+      backdrop-filter: blur(14px);
+      border: 1.5px solid #F8C08B;
+      border-radius: 12px;
+      padding: 8px 12px;
       text-align: center;
-      box-shadow: 0 16px 40px rgba(0,0,0,0.85), 0 0 25px rgba(248, 192, 139, 0.25);
-      animation: pulseBanner 4s ease-in-out infinite alternate;
-    }
-    @keyframes pulseBanner {
-      0% { transform: translateY(0); box-shadow: 0 16px 40px rgba(0,0,0,0.85), 0 0 20px rgba(248, 192, 139, 0.2); }
-      100% { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.9), 0 0 32px rgba(248, 192, 139, 0.4); }
+      box-shadow: 0 8px 24px rgba(0,0,0,0.8), 0 0 15px rgba(248, 192, 139, 0.2);
     }
     .letreiro-tag {
       display: inline-block;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       color: #F8C08B;
       background: rgba(248, 192, 139, 0.15);
-      border: 1px solid rgba(248, 192, 139, 0.4);
-      padding: 4px 10px;
-      border-radius: 20px;
-      margin-bottom: 10px;
+      border: 1px solid rgba(248, 192, 139, 0.35);
+      padding: 2px 7px;
+      border-radius: 10px;
+      margin-bottom: 4px;
     }
     .letreiro-titulo {
-      font-size: 17px;
+      font-size: 13px;
       font-weight: 800;
-      line-height: 1.35;
+      line-height: 1.25;
       color: #FFFFFF;
-      margin-bottom: 10px;
+      margin-bottom: 3px;
       letter-spacing: -0.01em;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+      text-shadow: 0 1px 3px rgba(0,0,0,0.9);
     }
     .letreiro-autor {
-      font-size: 12px;
+      font-size: 10.5px;
       font-weight: 600;
       color: #F8C08B;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      border-top: 1px solid rgba(248, 192, 139, 0.2);
-      padding-top: 8px;
+      gap: 4px;
     }
 
     .sidebar {
       position: absolute;
-      right: 12px;
-      bottom: 110px;
+      right: 10px;
+      bottom: 125px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 12px;
       align-items: center;
       pointer-events: auto;
     }
@@ -153,23 +151,23 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 4px;
+      gap: 3px;
       color: #fff;
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 600;
       cursor: pointer;
     }
     .side-icon-btn {
-      width: 42px;
-      height: 42px;
+      width: 38px;
+      height: 38px;
       border-radius: 50%;
       background: rgba(11, 17, 32, 0.85);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
       transition: transform 0.2s, background 0.2s;
     }
     .side-icon-btn:hover {
@@ -177,8 +175,8 @@
       background: rgba(248, 192, 139, 0.25);
     }
     .side-action svg {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       fill: none;
       stroke: #fff;
       stroke-width: 2;
@@ -186,27 +184,26 @@
 
     .bottom-info {
       pointer-events: auto;
-      max-width: 84%;
+      max-width: 82%;
       background: rgba(11, 17, 32, 0.92);
       backdrop-filter: blur(14px);
       border: 1px solid rgba(248, 192, 139, 0.35);
       border-radius: 14px;
-      padding: 12px 14px;
-      box-shadow: 0 12px 36px rgba(0,0,0,0.85);
+      padding: 10px 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.85);
     }
     .user-row {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
-    .user-row img.avatar-img {
-      width: 32px;
-      height: 32px;
+    .user-row svg.avatar-svg {
+      width: 30px;
+      height: 30px;
       border-radius: 50%;
-      object-fit: cover;
-      background: #0f172a;
       border: 1.5px solid #F8C08B;
+      flex-shrink: 0;
     }
     .username {
       font-weight: 700;
@@ -258,17 +255,20 @@
   <div class="reels-container">
     <video src="../saidas/reels/reels-gratidao-detalhes/video.mp4" autoplay loop muted playsinline controls></video>
     <div class="overlay">
-      <div class="top-bar">
-        <span>Reels Oficial</span>
-        <span class="live-badge">Publicado</span>
-      </div>
+      <!-- GRUPO DO TOPO: BARRA + LETREIRO ELEGANTE ACIMA DO CABELO/ROSTO -->
+      <div class="top-group">
+        <div class="top-bar">
+          <span>Reels Oficial</span>
+          <span class="live-badge">Publicado</span>
+        </div>
 
-      <!-- LETREIRO DESTACADO (ALTO CONTRASTE) -->
-      <div class="letreiro-destaque">
-        <span class="letreiro-tag">CONSULTORIA DE DETALHES</span>
-        <h2 class="letreiro-titulo">A essência de qualquer negócio são as pessoas e o propósito.</h2>
-        <div class="letreiro-autor">
-          <span>AdmNilvaCESF & CIA 🕊️</span>
+        <!-- LETREIRO DESTACADO (NO TOPO, ROSTO 100% LIVRE) -->
+        <div class="letreiro-destaque">
+          <span class="letreiro-tag">CONSULTORIA DE DETALHES</span>
+          <h2 class="letreiro-titulo">A essência de qualquer negócio são as pessoas e o propósito.</h2>
+          <div class="letreiro-autor">
+            <span>AdmNilvaCESF & CIA 🕊️</span>
+          </div>
         </div>
       </div>
 
@@ -300,7 +300,10 @@
 
       <div class="bottom-info">
         <div class="user-row">
-          <img class="avatar-img" src="../recursos/fotos/foto-nilva-1.png" alt="Nilva Coimbra">
+          <svg class="avatar-svg" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="16" fill="#0f172a"/>
+            <text x="16" y="21" text-anchor="middle" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#F8C08B">NC</text>
+          </svg>
           <span class="username">nilva_admoficial</span>
           <svg class="verified" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12l-2.1 2.4.3 3.2-3.1.7-1.6 2.8-2.9-1.3-2.9 1.3-1.6-2.8-3.1-.7.3-3.2L3 12l2.1-2.4-.3-3.2 3.1-.7 1.6-2.8 2.9 1.3 2.9-1.3 1.6 2.8 3.1.7-.3 3.2L22 12z"></path><path d="M8.3 12.2l2.3 2.3 5.1-5.1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
           <button class="follow-btn">Seguindo</button>
