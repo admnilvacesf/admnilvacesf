@@ -105,6 +105,34 @@
       text-align: center;
       box-shadow: 0 8px 24px rgba(0,0,0,0.8), 0 0 15px rgba(248, 192, 139, 0.2);
     }
+    .letreiro-tag-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .simbolo-adm-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1.5px solid #F8C08B;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+    }
+    .simbolo-adm-badge.sm {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #F8C08B;
+    }
+    .simbolo-adm-img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
     .letreiro-tag {
       display: inline-block;
       font-size: 9px;
@@ -116,7 +144,6 @@
       border: 1px solid rgba(248, 192, 139, 0.35);
       padding: 2px 7px;
       border-radius: 10px;
-      margin-bottom: 4px;
     }
     .letreiro-titulo {
       font-size: 13px;
@@ -134,7 +161,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 5px;
     }
 
     .sidebar {
@@ -255,18 +282,31 @@
   <div class="reels-container">
     <video src="../saidas/reels/reels-gratidao-detalhes/video.mp4" autoplay loop muted playsinline controls></video>
     <div class="overlay">
-      <!-- GRUPO DO TOPO: BARRA + LETREIRO ELEGANTE ACIMA DO CABELO/ROSTO -->
+      <!-- GRUPO DO TOPO: BARRA + LETREIRO ELEGANTE COM SÍMBOLO DA ADMINISTRAÇÃO -->
       <div class="top-group">
         <div class="top-bar">
-          <span>Reels Oficial</span>
+          <span style="display:flex; align-items:center; gap:6px;">
+            <span class="simbolo-adm-badge sm">
+              <img src="simbolo-administracao.png" alt="Adm" class="simbolo-adm-img">
+            </span>
+            Reels Oficial
+          </span>
           <span class="live-badge">Publicado</span>
         </div>
 
         <!-- LETREIRO DESTACADO (NO TOPO, ROSTO 100% LIVRE) -->
         <div class="letreiro-destaque">
-          <span class="letreiro-tag">CONSULTORIA DE DETALHES</span>
+          <div class="letreiro-tag-row">
+            <span class="simbolo-adm-badge" title="Símbolo Oficial da Administração">
+              <img src="simbolo-administracao.png" alt="Símbolo da Administração" class="simbolo-adm-img">
+            </span>
+            <span class="letreiro-tag">CONSULTORIA DE DETALHES • ADM</span>
+          </div>
           <h2 class="letreiro-titulo">A essência de qualquer negócio são as pessoas e o propósito.</h2>
           <div class="letreiro-autor">
+            <span class="simbolo-adm-badge sm">
+              <img src="simbolo-administracao.png" alt="CFA" class="simbolo-adm-img">
+            </span>
             <span>AdmNilvaCESF & CIA 🕊️</span>
           </div>
         </div>
