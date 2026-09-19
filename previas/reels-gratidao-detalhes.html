@@ -52,8 +52,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 18px 16px 24px;
-      background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, transparent 20%, transparent 60%, rgba(0,0,0,0.85) 100%);
+      padding: 16px 14px 20px;
+      background: linear-gradient(180deg, rgba(7,8,12,0.65) 0%, transparent 22%, transparent 55%, rgba(7,8,12,0.85) 100%);
     }
     .top-bar {
       display: flex;
@@ -61,15 +61,91 @@
       align-items: center;
       color: #fff;
       font-weight: 700;
-      font-size: 16px;
+      font-size: 14px;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(10px);
+      padding: 8px 14px;
+      border-radius: 30px;
+      border: 1px solid rgba(248, 192, 139, 0.35);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.5);
     }
+    .top-bar .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: #10b981;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .top-bar .live-badge::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* LETREIRO DE DESTAQUE CENTRAL (ALTO CONTRASTE) */
+    .letreiro-destaque {
+      pointer-events: auto;
+      margin: auto 4px;
+      background: rgba(11, 17, 32, 0.94);
+      backdrop-filter: blur(16px);
+      border: 2px solid #F8C08B;
+      border-radius: 16px;
+      padding: 18px 18px;
+      text-align: center;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.85), 0 0 25px rgba(248, 192, 139, 0.25);
+      animation: pulseBanner 4s ease-in-out infinite alternate;
+    }
+    @keyframes pulseBanner {
+      0% { transform: translateY(0); box-shadow: 0 16px 40px rgba(0,0,0,0.85), 0 0 20px rgba(248, 192, 139, 0.2); }
+      100% { transform: translateY(-4px); box-shadow: 0 20px 48px rgba(0,0,0,0.9), 0 0 32px rgba(248, 192, 139, 0.4); }
+    }
+    .letreiro-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #F8C08B;
+      background: rgba(248, 192, 139, 0.15);
+      border: 1px solid rgba(248, 192, 139, 0.4);
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .letreiro-titulo {
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.35;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.9);
+    }
+    .letreiro-autor {
+      font-size: 12px;
+      font-weight: 600;
+      color: #F8C08B;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border-top: 1px solid rgba(248, 192, 139, 0.2);
+      padding-top: 8px;
+    }
+
     .sidebar {
       position: absolute;
       right: 12px;
-      bottom: 90px;
+      bottom: 110px;
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 14px;
       align-items: center;
       pointer-events: auto;
     }
@@ -80,18 +156,43 @@
       gap: 4px;
       color: #fff;
       font-size: 11px;
+      font-weight: 600;
       cursor: pointer;
     }
+    .side-icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+      transition: transform 0.2s, background 0.2s;
+    }
+    .side-icon-btn:hover {
+      transform: scale(1.08);
+      background: rgba(248, 192, 139, 0.25);
+    }
     .side-action svg {
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
       fill: none;
-      stroke: currentColor;
+      stroke: #fff;
       stroke-width: 2;
     }
+
     .bottom-info {
       pointer-events: auto;
-      max-width: 82%;
+      max-width: 84%;
+      background: rgba(11, 17, 32, 0.92);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(248, 192, 139, 0.35);
+      border-radius: 14px;
+      padding: 12px 14px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.85);
     }
     .user-row {
       display: flex;
@@ -99,15 +200,17 @@
       gap: 8px;
       margin-bottom: 8px;
     }
-    .user-row img, .user-row svg.avatar-icon {
+    .user-row img.avatar-img {
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: #1e293b;
+      object-fit: cover;
+      background: #0f172a;
+      border: 1.5px solid #F8C08B;
     }
     .username {
       font-weight: 700;
-      font-size: 14px;
+      font-size: 13px;
       color: #fff;
     }
     .verified {
@@ -116,34 +219,37 @@
       color: var(--blue);
     }
     .follow-btn {
-      border: 1px solid rgba(255,255,255,0.6);
-      background: rgba(0,0,0,0.3);
-      color: #fff;
-      padding: 3px 10px;
+      border: 1px solid #F8C08B;
+      background: rgba(248, 192, 139, 0.15);
+      color: #F8C08B;
+      padding: 2px 9px;
       border-radius: 6px;
-      font-size: 12px;
-      font-weight: 600;
+      font-size: 11px;
+      font-weight: 700;
       cursor: pointer;
     }
     .caption-box {
-      font-size: 13px;
-      line-height: 1.4;
-      color: #fff;
-      margin-bottom: 10px;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-      max-height: 120px;
+      font-size: 12px;
+      line-height: 1.45;
+      color: #F4F1EA;
+      margin-bottom: 8px;
+      max-height: 100px;
       overflow-y: auto;
+    }
+    .caption-box strong {
+      color: #F8C08B;
     }
     .audio-tag {
       display: flex;
       align-items: center;
       gap: 6px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.9);
+      font-size: 11px;
+      color: #F8C08B;
+      font-weight: 500;
     }
     .audio-tag svg {
-      width: 14px;
-      height: 14px;
+      width: 13px;
+      height: 13px;
       fill: currentColor;
     }
   </style>
@@ -153,35 +259,54 @@
     <video src="../saidas/reels/reels-gratidao-detalhes/video.mp4" autoplay loop muted playsinline controls></video>
     <div class="overlay">
       <div class="top-bar">
-        <span>Reels</span>
-        <span>📷</span>
+        <span>Reels Oficial</span>
+        <span class="live-badge">Publicado</span>
       </div>
+
+      <!-- LETREIRO DESTACADO (ALTO CONTRASTE) -->
+      <div class="letreiro-destaque">
+        <span class="letreiro-tag">CONSULTORIA DE DETALHES</span>
+        <h2 class="letreiro-titulo">A essência de qualquer negócio são as pessoas e o propósito.</h2>
+        <div class="letreiro-autor">
+          <span>AdmNilvaCESF & CIA 🕊️</span>
+        </div>
+      </div>
+
       <div class="sidebar">
         <div class="side-action">
-          <svg viewBox="0 0 24 24"><path d="M20.8 4.6c-1.8-1.8-4.7-1.8-6.5 0L12 6.9 9.7 4.6c-1.8-1.8-4.7-1.8-6.5 0s-1.8 4.7 0 6.5L12 20l8.8-8.9c1.8-1.8 1.8-4.7 0-6.5z"></path></svg>
-          <span>2.4k</span>
+          <div class="side-icon-btn">
+            <svg viewBox="0 0 24 24"><path d="M20.8 4.6c-1.8-1.8-4.7-1.8-6.5 0L12 6.9 9.7 4.6c-1.8-1.8-4.7-1.8-6.5 0s-1.8 4.7 0 6.5L12 20l8.8-8.9c1.8-1.8 1.8-4.7 0-6.5z"></path></svg>
+          </div>
+          <span>Curtir</span>
         </div>
         <div class="side-action">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.7 8.3 9.7 9.7 0 0 1-4.3-1l-5 1.2 1.3-4.4a8.2 8.2 0 0 1-.9-3.8A8.4 8.4 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8z"></path></svg>
-          <span>142</span>
+          <div class="side-icon-btn">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-8.7 8.3 9.7 9.7 0 0 1-4.3-1l-5 1.2 1.3-4.4a8.2 8.2 0 0 1-.9-3.8A8.4 8.4 0 0 1 12 3.5a8.4 8.4 0 0 1 9 8z"></path></svg>
+          </div>
+          <span>Comentar</span>
         </div>
         <div class="side-action">
-          <svg viewBox="0 0 24 24"><path d="M22 3L9.5 13.2"></path><path d="M22 3l-4.2 18-6.1-7.4L3 10.6 22 3z"></path></svg>
-          <span>Enviar</span>
+          <div class="side-icon-btn">
+            <svg viewBox="0 0 24 24"><path d="M22 3L9.5 13.2"></path><path d="M22 3l-4.2 18-6.1-7.4L3 10.6 22 3z"></path></svg>
+          </div>
+          <span>Compartilhar</span>
         </div>
         <div class="side-action">
-          <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
+          <div class="side-icon-btn">
+            <svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"></path></svg>
+          </div>
         </div>
       </div>
+
       <div class="bottom-info">
         <div class="user-row">
-          <svg class="avatar-icon" viewBox="0 0 96 96"><rect width="96" height="96" rx="48" fill="#1e293b"/><text x="48" y="56" text-anchor="middle" font-family="sans-serif" font-size="30" font-weight="700" fill="#f8fafc">NC</text></svg>
+          <img class="avatar-img" src="../recursos/fotos/foto-nilva-1.png" alt="Nilva Coimbra">
           <span class="username">nilva_admoficial</span>
           <svg class="verified" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12l-2.1 2.4.3 3.2-3.1.7-1.6 2.8-2.9-1.3-2.9 1.3-1.6-2.8-3.1-.7.3-3.2L3 12l2.1-2.4-.3-3.2 3.1-.7 1.6-2.8 2.9 1.3 2.9-1.3 1.6 2.8 3.1.7-.3 3.2L22 12z"></path><path d="M8.3 12.2l2.3 2.3 5.1-5.1" stroke="#000" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"></path></svg>
           <button class="follow-btn">Seguindo</button>
         </div>
         <div class="caption-box">
-          A essência de qualquer negócio nunca foi apenas sobre planilhas ou números: é, antes de tudo, sobre pessoas e propósito. Ao longo de mais de três décadas dedicadas à administração e à consultoria estratégica, aprendi que o verdadeiro crescimento nasce da atenção aos detalhes.<br><br>Com carinho,<br><strong>AdmNilvaCESF & CIA | Consultoria de Detalhes 🕊️</strong>
+          A essência de qualquer negócio nunca foi apenas sobre planilhas ou números: é, antes de tudo, sobre pessoas e propósito.<br><br>Ao longo de mais de três décadas dedicadas à administração e à consultoria estratégica, aprendi que o verdadeiro crescimento nasce da atenção aos detalhes.<br><br>Com carinho,<br><strong>AdmNilvaCESF & CIA | Consultoria de Detalhes 🕊️</strong>
         </div>
         <div class="audio-tag">
           <svg viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
